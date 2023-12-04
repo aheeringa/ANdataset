@@ -9,10 +9,8 @@
 
 clear; close all;
 
-animal = 'AHG68';
-id = getID(animal);
-
-load(sprintf('/Users/amarins/Documents/PostDoc 2 stuff/Oldenburg/Writings/2023 AN data/dataset/dataset 11.9.23/%s.mat',id))
+id = input('Enter the animal ID of the struct you want to see: \n',"s");
+load(sprintf('%s.mat',id))
 
 fprintf('This animal (%s) is %.1f months old and has an ABR threshold of %d dB SPL\n',exp.info.sex, exp.info.age/(365/12), exp.info.ABR.threshold)
 
